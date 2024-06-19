@@ -1,0 +1,89 @@
+@media screen and (min-width:1200px){
+    .root {
+        width:1200px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav-item {
+        display: inline-block;
+        align-content: center;
+    }
+}
+
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+body {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+section, footer {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.root {
+    background-color: ivory;
+
+}
+
+/* header */
+.logobox, .logo, .logotext, .nav-items{
+    display: inline-block;
+    align-content: center;
+}
+
+.logobox, .logo, .logotext, .nav-items, .li-logo, .li-link{
+    vertical-align: middle;
+}
+
+.nav-item {
+    font-size: 1.5rem;
+    margin: 1rem;
+    list-style: none;
+}
+
+/* main */
+div.card-container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+div.card {
+    background-color: lightsteelblue;
+    width:400px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.kanban {
+    background-color: lightsteelblue;
+    height: 12rem;
+    text-align: center;
+    align-content: center;
+}
+
+/* footer */
+footer {
+    padding: 2rem;
+}
+.footer-span {
+    border: 2px dotted gray;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
