@@ -1,0 +1,146 @@
+/* global */
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+}
+
+/* header */
+.header {
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+.nav-items {
+    display: inline-block;
+    list-style: none;
+}
+
+.nav-item {
+    display: inline-block;
+    font-size: 1.25rem;
+    margin: 0.75rem;
+}
+
+.logo-box, .tool-box, .li-logo, .li-item {
+    vertical-align: middle;
+}
+
+.li-logo {
+    width: 32px;
+    height: 32px;
+}
+
+.popmenu {
+    position: sticky;
+    background-color: white;
+}
+
+/* main */
+main {
+    text-align: center;
+}
+
+div.card-container, div.card-container-inner {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+div.card-container-inner { 
+    width: 1200px;
+}
+
+div.card-container-stretch{
+    align-items: stretch;
+}
+
+div.card {
+    background-color: white;
+    display: block;
+    flex-grow: 1;
+    border: 2px solid lightgray;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+div.txparent-card {
+    /* margin: 12rem 0; */
+    display: inline-block;
+    flex-grow: 1;
+    padding: 1rem;
+}
+div.txparent-card ul {
+    list-style: none;
+}
+
+
+/* section */
+.font-size-xxlg {
+    font-size: xx-large;
+}
+
+.section-title {
+    padding:  3rem;
+    margin: 0;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.section-0 {
+    background-color: ivory;
+    padding: 1rem;
+    /* height: 90vh; */
+}
+
+.section-1 {
+    background-color: aquamarine;
+    padding: 1rem;
+    /* height: 90vh; */
+}
+
+.section-2 {
+    background-color: cornflowerblue;
+    padding: 1rem;
+    /* height: 90vh; */
+}
+
+img.float-right {
+    float: right;
+}
+
+p.align-left, h1.align-left {
+    text-align: left;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+  }
+  .dropdown-options {
+    display: none;
+    position: absolute;
+    overflow: auto;
+  }
+  
+  .dropdown:hover .dropdown-options {
+    display: block;
+  }
