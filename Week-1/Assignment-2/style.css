@@ -64,6 +64,7 @@ div.card-container {
     flex-wrap: wrap;
     gap: 1rem;
 }
+
 div.card {
     background-color: lightsteelblue;
     width:400px;

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Developer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/icon_brain.svg" />
+    <script>
+        const serviceData = [
+            {
+                img: 'img/icon_brain.svg',
+                title: 'Brain',
+                para: 'lorem'
+            },
+            {
+                img: 'img/icon_neuron.svg',
+                title: 'Brain',
+                para: 'lorem'
+            },
+            {
+                img: 'img/icon_chip.svg',
+                title: 'Brain',
+                para: 'lorem'
+            },
+            {
+                img: 'img/icon_fingerprint.svg',
+                title: 'Brain',
+                para: 'lorem'
+            },
+            {
+                img: 'img/icon_database.svg',
+                title: 'Brain',
+                para: 'lorem'
+            },
+            {
+                img: 'img/icon_cloud.svg',
+                title: 'Brain',
+                para: 'lorem'
+            },
+            {
+                img: 'img/icon_database.svg',
+                title: 'Brain',
+                para: 'lorem'
+            },
+            {
+                img: 'img/icon_cloud.svg',
+                title: 'Brain',
+                para: 'lorem'
+            },
+            
+        ]
+
+        function appendService(data) {
+            console.log(data)
+            var serviceElement = document.getElementById('brain-service');
+            var innerElement = null;
+            for(var i=0;i<data.length;i++) {
+                if(i%4==0) {
+                    if(innerElement != null) {
+                        serviceElement.appendChild(innerElement)
+                    }
+
+                    innerElement = document.createElement('div')
+                    innerElement.setAttribute("class", "card-container-inner")
+                }
+                var cimg = document.createElement('img')
+                cimg.setAttribute("src", data[i].img)
+                cimg.setAttribute("width", "64px")
+                cimg.setAttribute("height", "64px")
+                var ctitle = document.createElement('h2')
+                ctitle.innerText = data[i].title
+                var cpara = document.createElement('p')
+                cpara.innerText = data[i].para
+                var card = document.createElement('div')
+                card.setAttribute("class", "card")
+
+                card.appendChild(cimg)
+                card.appendChild(ctitle)
+                card.appendChild(cpara)
+                innerElement.appendChild(card)
+            }
+            if(card != null) {
+                serviceElement.appendChild(innerElement)
+            }
+        }
+
+
+        function registerEvents() {
+            var navProductElement = document.getElementById('nav-product');
+            navProductElement.addEventListener('click', e => {
+                var menu = document.getElementById('menu-product');
+                const display = menu.style.display
+                if (display == 'none') {
+                    menu.style.display = ''
+                } else {
+                    menu.style.display = 'none'
+                }
+            })
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            appendService(serviceData);
+            registerEvents();
+        })
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <div class="logo-box">
+                <img class= "li-logo" src="img/icon_brain.svg" width="48px" height="48px" />
+                <ul class="nav-items">
+                    <li class="nav-item" id="nav-product"><a href="#">產品</a></li>
+                    <li class="nav-item"><a href="#">解決方案</a></li>
+                    <li class="nav-item"><a href="#">事件</a></li>
+                    <li class="nav-item"><a href="#">了解詳情</a></li>
+                    <li class="nav-item"><a href="#">社群</a></li>
+                    <li class="nav-item"><a href="#">開發人員</a></li>
+                    <li class="nav-item"><a href="#">網誌</a></li>
+                </ul> 
+            </div>
+            <div class="tool-box">
+                <ul class="nav-items">
+                    <li class="nav-item search-box">
+                        <img class= "li-logo" src="img/icon_lenz.svg" alt="" />
+                        <input class="li-item" type="text"></input>
+                    </li>
+                    <li class="nav-item lang-box">
+                        <img class= "li-logo" src="img/icon_global.svg" alt="" />
+                        <select class="li-item">
+                            <option>a</option>
+                            <option>a</option>
+                            <option>a</option>
+                            <option>a</option>
+                        </select>
+                    </li>
+                    <li class="nav-item more-box">
+                        <img class= "li-logo" src="img/icon_more.svg" alt="" />
+                        <select class="li-item">
+                            <option>a</option>
+                            <option>a</option>
+                            <option>a</option>
+                            <option>a</option>
+                        </select>
+                    </li>
+                    <li class="nav-item user-box">
+                        <img class= "li-logo" src="img/icon_user.svg" alt="" />
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="menu-product" class="popmenu">
+            <div class="card-container">
+                <div class="card-container-inner">
+                    <div class="txparent-card">
+                        <ul>
+                            <li><a href="#">Brain</a></li>
+                            <li><a href="#">Neuron</a></li>
+                            <li><a href="#">Chips</a></li>
+                            <li><a href="#">Cloud</a></li>
+                        </ul>
+                    </div>
+                    <div class="txparent-card">
+                        <ul>
+                            <li><a href="#">Brain</a></li>
+                            <li><a href="#">Neuron</a></li>
+                            <li><a href="#">Chips</a></li>
+                            <li><a href="#">Cloud</a></li>
+                        </ul>
+                    </div>
+                    <div class="txparent-card">
+                        <ul>
+                            <li><a href="#">Brain</a></li>
+                            <li><a href="#">Neuron</a></li>
+                            <li><a href="#">Chips</a></li>
+                            <li><a href="#">Cloud</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section  class="section-0">
+            <div class="card-container card-container-stretch">
+                <div class="txparent-card">
+                    <h1 class="font-size-xxlg">Brain大腦開發者論壇</h1>
+                    <p class="font-size-xxlg">關於今年最先進的技術交流平台</p>
+                    <button>立即報名</button>
+                </div>
+                <div class="txparent-card">
+                    <img src="img/img_brain.png" width="320px" >
+                </div>
+            </div>
+        </section>
+        <section  class="section-1">
+            <p class="section-title">立即建構服務</p>
+            <div id="brain-service" class="card-container">
+            </div>
+        </section>
+        <section  class="section-2">
+            <p class="section-title">您需要開發什麼方面的內容</p>
+            <div class="card-container">
+                <div class="card-container-inner">
+                    <div class="card">
+                        <img src="img/icon_brain.svg" alt="" width="64px" height="64px" class="card-img float-right">
+                        <p class="card-title align-left">title</p>
+                        <p class="card-text align-left">Lorem ipsum dolor sit amet</p>
+                    </div>
+                    <div class="card">
+                        <img src="img/icon_neuron.svg" alt="" width="64px" height="64px" class="card-img float-right">
+                        <p class="card-title align-left">title</p>
+                        <p class="card-text align-left">Lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div class="card-container-inner">
+                    <div class="card">
+                        <img src="img/icon_chip.svg" alt="" width="64px" height="64px" class="card-img float-right">
+                        <p class="card-title align-left">title</p>
+                        <p class="card-text align-left">Lorem ipsum dolor sit amet</p>
+                    </div>
+                    <div class="card">
+                        <img src="img/icon_fingerprint.svg" alt="" width="64px" height="64px" class="card-img float-right">
+                        <p class="card-title align-left">title</p>
+                        <p class="card-text align-left">Lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section  class="section-1">
+            <div class="dropdown">
+                <button>Profile</button>
+                <div class="dropdown-options">
+                  <a href="#">Dashboard</a>
+                  <a href="#">Setting</a>
+                  <a href="#">Logout</a>
+                </div>
+              </div>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <div class="explain-box">
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="#">條款</a></li>
+                    <li class="nav-item"><a href="#">隱私權</a></li>
+                </ul>
+            </div>
+            <div class="explain-box">
+                <ul class="nav-items">
+                    <li class="nav-item"><span>&copy; powered by Brian 2024</span></li>
+                    <li class="nav-item"><button>立即訂閱</button></li>
+                    <li class="nav-item lang-box">
+                        <img class= "li-logo" src="img/icon_global.svg" alt="" />
+                        <select class="li-item">
+                            <option>a</option>
+                            <option>a</option>
+                            <option>a</option>
+                            <option>a</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
+</body>
+</html>
