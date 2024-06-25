@@ -1,0 +1,111 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: '微軟正黑體', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+@media screen and (min-width:1200px){
+    #root {
+        width:1200px;
+    }
+}
+
+#root {
+    background-color: ivory;
+}
+
+#nav-bar {
+    position: sticky;
+    padding: 1rem;
+}
+
+#kanban {
+    background-color: lightsteelblue;
+    height: 300px;
+    text-align: center;
+    align-content: center;
+}
+
+.card-container{
+    width: 800px;
+}
+#container-2 {
+    display: none;
+}
+
+#show-more {
+    background-color: lightblue;
+    border: 2px solid ligthgray;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+#show-more:hover {
+    background-color: lightsteelblue;
+    cursor: pointer;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.fwarp{
+    flex-wrap: wrap;
+}
+
+.jc-start {
+    justify-content: flex-start;
+}
+.jc-center {
+    justify-content: center;
+}
+.js-end {
+    justify-content: flex-end;
+}
+.js-sp-btw{
+    justify-content: space-between;
+}
+
+.p-1{
+    padding: 1rem;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+.item {
+    display: inline-block;
+    align-content: center;
+}
+
+.logo-32 {
+    width: 32px;
+    height: 32px;
+    align-content: center;
+}
+
+.card {
+    background-color: lightsteelblue;
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+}
+
