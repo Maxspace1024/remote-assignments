@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>myName</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let input = document.querySelector("#input")
+            let btn = document.querySelector("#btn")
+
+            btn.addEventListener("click", () => {
+                fetch(`trackName?name=${input.value}`)
+                    .then(r => {
+                        // redirect path
+                        window.location.replace("./myName");
+                    })
+            })
+        })
+    </script>
 </head>
 <body>
-<h1>The Name is:</h1>
-<p th:text="${name}"></p>
+<div th:if="${#strings.isEmpty(name)}">
+    <input type="text" id="input">
+    <button id="btn">submit</button>
+</div>
+<div th:if="${!#strings.isEmpty(name)}">
+    <h1>The Name is:</h1>
+    <p th:text="${name}"></p>
+</div>
 </body>
 </html>

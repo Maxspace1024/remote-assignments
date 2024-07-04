@@ -12,14 +12,8 @@ public class UserController {
 
     @GetMapping("/myName")
     public String myName(@CookieValue(value = "name", required = false) String name, Model model) {
-        if(name == null) {
-            // input user name
-            return "inputname";
-        } else {
-            // show user name
-            model.addAttribute("name", name);
-            return "myname";
-        }
+        model.addAttribute("name", name);
+        return "myname";
     }
 
     @GetMapping("/trackName")

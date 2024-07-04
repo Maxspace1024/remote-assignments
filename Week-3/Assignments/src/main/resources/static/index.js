@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
+    xhr.open("GET", `data?number=10`)
+    xhr.send()
 
     btn.addEventListener("click", () => {
         xhr.open("GET", `data?number=${input.value}`)
