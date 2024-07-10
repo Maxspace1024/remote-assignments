@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #loginBlock {
+            background-color: lightsteelblue;
+        }
+
+        #signupBlock {
+            background-color: lightgreen;
+        }
+
+        #errorMessage {
+            display: none;
+            background-color: lightgray     ;
+            color: red;
+            font-size: 1.25rem;
+            font-weight: bolder;
+            position: absolute; 
+            padding : 0.25rem;
+            margin: 0 auto;
+            bottom: 0; 
+        }
+
+        .blockWrong {
+            border: 2px solid red
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let loginBlock = document.querySelector("#loginBlock")
+            let singupBlock = document.querySelector("#signupBlock")
+
+            let signupPageBtn = document.querySelector("#signupPageBtn")
+            let loginPageBtn = document.querySelector("#loginPageBtn")
+            let signupBtn = document.querySelector("#signupBtn")
+            let loginBtn = document.querySelector("#loginBtn")
+
+            let loginForm = document.querySelector("#loginForm")
+            let signupForm = document.querySelector("#signupForm")
+
+            let errorMessage = document.querySelector("#errorMessage")
+
+            if (loginBlock != null) {
+                loginBlock.addEventListener("click", () => {
+                    loginBlock.classList.remove("blockWrong")
+                    errorMessage.style.display = "none"
+                })
+
+                loginBtn.addEventListener("click", () => {
+                    let fData = new FormData(loginForm)
+                    fetch("login", {
+                        method: "POST",
+                        body: fData
+                    })
+                    .then(r => r.json())
+                    .then(d => {
+                        // if success then redirect to /userHome
+                        if(d.success == true) {
+                            loginSuccess()
+                        } else {
+                            loginFail()
+                        }
+                    })
+                })
+                signupPageBtn.addEventListener("click", () => {
+                    location.href = "signup"
+                })
+
+            } else if(signupBlock != null) {
+                signupBlock.addEventListener("click", () => {
+                    signupBlock.classList.remove("blockWrong")
+                    errorMessage.style.display = "none"
+                })
+                signupBtn.addEventListener("click", () => {
+                    let fData = new FormData(signupForm)
+                    fetch("signup", {
+                        method: "POST",
+                        body: fData
+                    })
+                    .then(r => r.json())
+                    .then(d => {
+                        // if success then redirect to /login
+                        if(d.success == true) {
+                            signupSuccess()
+                        } else {
+                            signupFail()
+                        }
+                    })
+                })
+
+                loginPageBtn.addEventListener("click", () => {
+                    location.href = "login"
+                })
+            }
+
+
+            function loginSuccess() {
+                location.href = "memberPage"
+            }
+            function loginFail() {
+                loginBlock.classList.add("blockWrong")
+                errorMessage.style.display = "block"
+                errorMessage.innerText = "帳號或密碼輸入錯誤"
+            }
+
+            function signupSuccess() {
+                location.href = "login"
+            }
+            function signupFail() {
+                signupBlock.classList.add("blockWrong")
+                errorMessage.style.display = "block"
+                errorMessage.innerText = "已有重複email"
+            }
+        })
+    </script>
+</head>
+<body>
+    <div th:if="${blockType} == 'loginBlock'" id="loginBlock" class="block">
+        <form id="loginForm">
+            <div>
+                <h3>Login</h3>
+            </div>
+            <div>
+                <label for="emailInput">email:</label>
+                <input id="emailInput" name="email" required>
+            </div>
+            <div>
+                <label for="passwordInput">password:</label>
+                <input id="passwordInput" name="password" required>
+            </div>
+            <div>
+                <button id="signupPageBtn" type="button">signup</button>
+                <button id="loginBtn" type="button">login</button>
+            </div>
+        </form>
+    </div>
+
+    <div th:if="${blockType} == 'signupBlock'" id="signupBlock" class="block">
+        <form id="signupForm">
+            <div>
+                <h3>SignUp</h3>
+            </div>
+            <div>
+                <label for="signupEmailInput">email:</label>
+                <input id="signupEmailInput" name="email" required>
+            </div>
+            <div>
+                <label for="signupPasswordInput">password:</label>
+                <input id="signupPasswordInput" name="password" required>
+            </div>
+            <div>
+                <button id="signupBtn" type="button">signup</button>
+                <button id="loginPageBtn" type="button">login</button>
+            </div>
+        </form>
+    </div>
+    <br>
+
+    <p id="errorMessage"></p>
+</body>
+</html>

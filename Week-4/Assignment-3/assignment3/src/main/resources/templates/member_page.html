@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #loginSuccess{
+            background-color: lightsteelblue;
+        }
+        #loginFail{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div th:if="${blockType} == loginSuccess" id="loginSuccess" class="block">
+        <p>登入成功</p>
+    </div>
+    <div th:if="${blockType} == loginFail" id="loginFail" class="block">
+        <p>禁止存取</p>
+    </div>
+</body>
+</html>
